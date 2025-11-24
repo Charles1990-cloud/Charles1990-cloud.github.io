@@ -3,334 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monkey King Barber Shop</title>
-    <!-- Carga de Tailwind CSS para un diseño moderno y responsivo -->
+    <title>Monkey King Barber Shop | Estilo a Domicilio en Callao</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Fuente Inter para la tipografía general -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Iconos Lucide -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Configuración de Tailwind para usar la fuente Inter */
-        html { font-family: 'Inter', sans-serif; }
-        /* Estilos personalizados para el fondo y la imagen principal */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        /* Colores inspirados en el vintage premium */
+        .text-mk-gold { color: #D4AF37; /* Dorado Clásico */ }
+        .bg-mk-gold { background-color: #D4AF37; }
+        .border-mk-gold { border-color: #D4AF37; }
+        .bg-pattern {
+            /* Simula un patrón de barbería sutil para el fondo, usa un gris oscuro */
+            background-color: #0d0d0d; 
+            background-image: radial-gradient(#222 1px, transparent 1px),
+                              radial-gradient(#222 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
         .hero-bg {
-            /* Usamos un degradado sutil con el negro para un look premium */
-            background: #111;
-            /* NOTA: La URL de la imagen (uploaded:image.png...) debe ser reemplazada por una URL pública o debe estar incluida localmente en tu repositorio de GitHub para que funcione correctamente. */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('uploaded:image.png-274dbd58-0e33-4a6b-b557-4031659b2eed');
+            /* Fondo con tu logo para un efecto dramático */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('logo.png');
             background-size: cover;
             background-position: center;
         }
-        /* Estilo para un hover premium en botones */
-        .btn-premium:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(240, 180, 50, 0.3);
+        .btn-gold:hover {
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.6);
+            transform: translateY(-1px);
         }
-        /* Clase para el color dorado/mostaza de la marca */
-        .text-mk-gold { color: #F0B432; }
-        .bg-mk-gold { background-color: #F0B432; }
-        .border-mk-gold { border-color: #F0B432; }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 antialiased">
+<body class="bg-gray-950 text-gray-100 antialiased">
 
     <!-- Encabezado y Navegación -->
-    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <!-- Logo y Nombre de la Barbería -->
+    <header class="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-sm shadow-2xl shadow-black/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
             <a href="#" class="flex items-center space-x-2">
-                <!-- Ícono de la Corona -->
-                <i data-lucide="crown" class="w-6 h-6 text-mk-gold"></i>
-                <span class="text-xl font-extrabold tracking-widest text-white">MONKEY KING</span>
+                <i data-lucide="crown" class="w-7 h-7 text-mk-gold"></i>
+                <span class="text-2xl font-black tracking-widest text-white">MONKEY KING</span>
+                <span class="text-xs font-light tracking-wider text-mk-gold hidden sm:inline">BARBER SHOP</span>
             </a>
             
-            <!-- Menú de Escritorio -->
             <nav class="hidden md:flex space-x-8">
-                <a href="#servicios" class="text-sm font-medium hover:text-mk-gold transition duration-200">Servicios</a>
-                <a href="#galeria" class="text-sm font-medium hover:text-mk-gold transition duration-200">Galería</a>
-                <a href="#equipo" class="text-sm font-medium hover:text-mk-gold transition duration-200">Equipo</a>
-                <a href="#contacto" class="text-sm font-medium hover:text-mk-gold transition duration-200">Contacto</a>
+                <a href="#domicilio" class="text-sm font-medium hover:text-mk-gold transition duration-200">Servicio a Domicilio</a>
+                <a href="#servicios" class="text-sm font-medium hover:text-mk-gold transition duration-200">Precios</a>
+                <a href="#social" class="text-sm font-medium hover:text-mk-gold transition duration-200">Proyecto Social</a>
             </nav>
 
-            <!-- Botón de Reserva (Siempre Visible en Escritorio) -->
-            <a href="#reserva" class="hidden md:block px-4 py-2 bg-mk-gold text-gray-900 font-bold text-sm rounded-lg shadow-lg btn-premium transition duration-300">
+            <a href="#contacto" class="hidden md:block px-6 py-2 bg-mk-gold text-gray-950 font-bold text-sm rounded-lg shadow-lg btn-gold transition duration-300">
                 RESERVAR CITA
             </a>
 
-            <!-- Botón de Menú Móvil -->
             <button id="mobile-menu-button" class="md:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition duration-200">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
 
-        <!-- Menú Móvil (Oculto por defecto) -->
-        <nav id="mobile-menu" class="hidden md:hidden absolute w-full bg-gray-900/95 shadow-2xl pb-4">
-            <a href="#servicios" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Servicios</a>
-            <a href="#galeria" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Galería</a>
-            <a href="#equipo" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Equipo</a>
-            <a href="#contacto" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Contacto</a>
-            <a href="#reserva" class="block mx-4 mt-2 px-4 py-2 text-center bg-mk-gold text-gray-900 font-bold rounded-lg btn-premium transition duration-300">RESERVAR CITA</a>
+        <!-- Menú Móvil -->
+        <nav id="mobile-menu" class="hidden md:hidden absolute w-full bg-gray-950/95 shadow-2xl pb-4">
+            <a href="#domicilio" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Servicio a Domicilio</a>
+            <a href="#servicios" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Precios</a>
+            <a href="#social" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Proyecto Social</a>
+            <a href="#contacto" class="block mx-4 mt-2 px-4 py-2 text-center bg-mk-gold text-gray-950 font-bold rounded-lg btn-gold transition duration-300">RESERVAR CITA</a>
         </nav>
     </header>
 
     <main>
-        <!-- Sección Principal (Hero) -->
-        <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-center">
-            <div class="px-4 sm:px-6 lg:px-8 max-w-xl">
-                <!-- Imagen del logo subida por el usuario -->
-                <img src="uploaded:image.png-274dbd58-0e33-4a6b-b557-4031659b2eed" 
-                     alt="Logo de Monkey King Barber Shop: Un gorila rey con corona y gafas de sol" 
-                     class="w-48 sm:w-64 md:w-80 mx-auto mb-8 rounded-full border-4 border-mk-gold/50 shadow-2xl">
+        <!-- Sección Principal (Hero - A Domicilio) -->
+        <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center text-center border-b border-mk-gold/20">
+            <div class="px-4 sm:px-6 lg:px-8 max-w-2xl py-24">
+                <p class="text-sm uppercase tracking-widest text-mk-gold mb-4 font-bold">MONKEY KING BARBER SHOP</p>
                 
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 leading-tight">
-                    <span class="text-mk-gold">Cortes de Rey.</span> Estilo de Leyenda.
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight text-white">
+                    <span class="text-mk-gold">Cortes Profesionales</span> a Domicilio en el Callao.
                 </h1>
-                <p class="text-lg sm:text-xl text-gray-400 mb-8 font-light">
-                    Transformamos tu look en arte. El mejor servicio de barbería en la ciudad.
+                <p class="text-xl sm:text-2xl text-gray-300 mb-10 font-light italic">
+                    "Donde te sentirás cómodo y recibirás un trato personalizado y único."
                 </p>
-                <a href="#servicios" class="px-8 py-3 bg-mk-gold text-gray-900 font-bold text-lg rounded-xl shadow-2xl btn-premium transition duration-300 transform hover:scale-105 inline-flex items-center space-x-2">
-                    VER SERVICIOS
-                    <i data-lucide="scissors" class="w-5 h-5"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- Sección de Servicios -->
-        <section id="servicios" class="py-20 md:py-32 bg-gray-950">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-bold mb-4 text-white">Nuestros Servicios</h2>
-                <p class="text-gray-400 mb-12 max-w-xl mx-auto">
-                    Elige el tratamiento que te mereces. Calidad, precisión y confort en cada detalle.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Servicio 1: Corte Clásico -->
-                    <div class="bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-mk-gold/20 transition duration-300 transform hover:scale-[1.02]">
-                        <i data-lucide="barber-shop" class="w-10 h-10 text-mk-gold mx-auto mb-4"></i>
-                        <h3 class="text-2xl font-semibold mb-3 text-white">Corte "King" Clásico</h3>
-                        <p class="text-gray-400 mb-4">
-                            Nuestro corte insignia. Incluye lavado, toalla caliente y styling.
-                        </p>
-                        <span class="text-3xl font-extrabold text-mk-gold">S/30</span>
-                    </div>
-
-                    <!-- Servicio 2: Arreglo de Barba -->
-                    <div class="bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-mk-gold/20 transition duration-300 transform hover:scale-[1.02]">
-                        <i data-lucide="hand-metal" class="w-10 h-10 text-mk-gold mx-auto mb-4"></i>
-                        <h3 class="text-2xl font-semibold mb-3 text-white">Arreglo de Barba y Perfilado</h3>
-                        <p class="text-gray-400 mb-4">
-                            Diseño de barba con navaja, aceites premium y bálsamo final.
-                        </p>
-                        <span class="text-3xl font-extrabold text-mk-gold">S/25</span>
-                    </div>
-
-                    <!-- Servicio 3: Paquete Completo -->
-                    <div class="bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-mk-gold/20 transition duration-300 transform hover:scale-[1.02] border-2 border-mk-gold/50">
-                        <i data-lucide="crown" class="w-10 h-10 text-mk-gold mx-auto mb-4 animate-pulse"></i>
-                        <h3 class="text-2xl font-bold mb-3 text-mk-gold">Paquete "Gorila Real"</h3>
-                        <p class="text-gray-400 mb-4">
-                            Corte de cabello, arreglo de barba y un masaje facial relajante.
-                        </p>
-                        <span class="text-3xl font-extrabold text-mk-gold">S/50</span>
-                    </div>
-                </div>
-                
-                <div class="mt-12">
-                    <a href="#reserva" class="px-6 py-3 border-2 border-mk-gold text-mk-gold font-bold text-lg rounded-xl btn-premium transition duration-300 inline-block">
-                        RESERVA AHORA
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contacto" class="px-8 py-3 bg-mk-gold text-gray-950 font-bold text-lg rounded-xl shadow-2xl shadow-mk-gold/40 btn-gold transition duration-300 transform hover:scale-105 inline-flex items-center justify-center space-x-2">
+                        RESERVAR POR WHATSAPP
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#servicios" class="px-8 py-3 border-2 border-white text-white font-bold text-lg rounded-xl shadow-lg transition duration-300 transform hover:border-mk-gold hover:text-mk-gold inline-flex items-center justify-center">
+                        VER PRECIOS
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de Galería (Mockup de trabajos) -->
-        <section id="galeria" class="py-20 md:py-32 bg-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center mb-4 text-white">Galería de Estilo</h2>
-                <p class="text-gray-400 text-center mb-12 max-w-xl mx-auto">
-                    Una muestra de nuestro arte. La calidad de un rey en cada corte.
-                </p>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 rounded-xl overflow-hidden">
-                    <!-- Placeholder de imágenes de trabajos -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl">
-                        <img src="https://placehold.co/600x800/222/fff?text=Corte+Fade+Clásico" alt="Corte de cabello estilo 'Fade Clásico' en la barbería Monkey King" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                            <p class="text-white font-semibold border-b-2 border-mk-gold">Fade Clásico</p>
-                        </div>
-                    </div>
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl">
-                        <img src="https://placehold.co/600x800/333/fff?text=Barba+Perfecta" alt="Barba perfectamente arreglada y perfilada" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                            <p class="text-white font-semibold border-b-2 border-mk-gold">Barba Perfilada</p>
-                        </div>
-                    </div>
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl">
-                        <img src="https://placehold.co/600x800/444/fff?text=Diseño+Lineas" alt="Diseño de cabello con líneas artísticas" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                            <p class="text-white font-semibold border-b-2 border-mk-gold">Diseño Urbano</p>
-                        </div>
-                    </div>
-                    <div class="group relative overflow-hidden rounded-lg shadow-xl">
-                        <img src="https://placehold.co/600x800/555/fff?text=Pompadour" alt="Corte de cabello estilo Pompadour moderno" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                            <p class="text-white font-semibold border-b-2 border-mk-gold">Pompadour Moderno</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Equipo/Barberos -->
-        <section id="equipo" class="py-20 md:py-32 bg-gray-950">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-bold mb-4 text-white">Nuestros Maestros</h2>
-                <p class="text-gray-400 mb-12 max-w-xl mx-auto">
-                    Conoce a los artistas detrás de la navaja. Expertos con años de experiencia.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Barbero 1 -->
-                    <div class="bg-gray-800 p-6 rounded-2xl shadow-xl">
-                        <img src="https://placehold.co/150x150/000/F0B432?text=Rey+Julio" alt="Foto del barbero Rey Julio" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-mk-gold">
-                        <h3 class="text-2xl font-semibold mb-2 text-mk-gold">Julio "The King"</h3>
-                        <p class="text-gray-400 mb-3">Maestro Barbero & Fundador</p>
-                        <div class="flex justify-center space-x-3 text-gray-500">
-                            <a href="#" class="hover:text-mk-gold"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                            <a href="#" class="hover:text-mk-gold"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Barbero 2 -->
-                    <div class="bg-gray-800 p-6 rounded-2xl shadow-xl">
-                        <img src="https://placehold.co/150x150/000/F0B432?text=Félix+Fino" alt="Foto del barbero Félix Fino" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-mk-gold">
-                        <h3 class="text-2xl font-semibold mb-2 text-mk-gold">Félix "The Blade"</h3>
-                        <p class="text-gray-400 mb-3">Especialista en Navaja y Tatuajes</p>
-                        <div class="flex justify-center space-x-3 text-gray-500">
-                            <a href="#" class="hover:text-mk-gold"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                            <a href="#" class="hover:text-mk-gold"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Barbero 3 -->
-                    <div class="bg-gray-800 p-6 rounded-2xl shadow-xl">
-                        <img src="https://placehold.co/150x150/000/F0B432?text=Mona+Lisa" alt="Foto de la barbera Mona Lisa" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-mk-gold">
-                        <h3 class="text-2xl font-semibold mb-2 text-mk-gold">Lisa "The Queen"</h3>
-                        <p class="text-gray-400 mb-3">Experta en Tendencias y Coloración</p>
-                        <div class="flex justify-center space-x-3 text-gray-500">
-                            <a href="#" class="hover:text-mk-gold"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                            <a href="#" class="hover:text-mk-gold"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Reserva y Contacto -->
-        <section id="contacto" class="py-20 md:py-32 bg-gray-900 border-t border-gray-800">
+        <!-- Sección de Propuesta de Valor / Por qué Elegirnos (Domicilio) -->
+        <section id="domicilio" class="py-20 md:py-32 bg-gray-950 bg-pattern">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Formulario de Contacto y Reserva -->
-                    <div id="reserva">
-                        <h2 class="text-4xl font-bold mb-4 text-mk-gold">Agenda tu Cita</h2>
-                        <p class="text-gray-400 mb-8">
-                            Envíanos un mensaje o reserva tu hora directamente.
+                <h2 class="text-4xl font-black text-center mb-4 text-white">La Experiencia Monkey King</h2>
+                <p class="text-xl text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+                    Transformamos tu espacio en una barbería privada. Comodidad, puntualidad y precisión, sin que te muevas de casa.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Valor 1: Puntualidad y Limpieza -->
+                    <div class="text-center p-6 border border-gray-800 rounded-xl shadow-xl hover:border-mk-gold/50 transition duration-300">
+                        <i data-lucide="clock" class="w-12 h-12 text-mk-gold mx-auto mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Puntualidad en la Cita</h3>
+                        <p class="text-gray-400">
+                            Gestionamos las citas y zonas de atención para llegar a tiempo, garantizando tu valioso tiempo.
                         </p>
-                        
-                        <form class="space-y-6 bg-gray-950 p-8 rounded-2xl shadow-2xl">
-                            <div>
-                                <label for="nombre" class="block text-sm font-medium text-white mb-2">Nombre Completo</label>
-                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-mk-gold focus:ring focus:ring-mk-gold/50 text-white" required>
-                            </div>
-                            <div>
-                                <label for="servicio" class="block text-sm font-medium text-white mb-2">Servicio Requerido</label>
-                                <select id="servicio" name="servicio" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-mk-gold focus:ring focus:ring-mk-gold/50 text-white" required>
-                                    <option value="" disabled selected>Selecciona un servicio</option>
-                                    <option value="Corte Clasico">Corte "King" Clásico (S/30)</option>
-                                    <option value="Arreglo Barba">Arreglo de Barba y Perfilado (S/25)</option>
-                                    <option value="Paquete Completo">Paquete "Gorila Real" (S/50)</option>
-                                    <option value="Otro">Otro (Especificar en mensaje)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="mensaje" class="block text-sm font-medium text-white mb-2">Mensaje / Comentarios</label>
-                                <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Qué día y hora prefieres? ¿Alguna indicación especial?" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-mk-gold focus:ring focus:ring-mk-gold/50 text-white"></textarea>
-                            </div>
-                            <button type="submit" class="w-full px-6 py-3 bg-mk-gold text-gray-900 font-bold text-lg rounded-xl shadow-lg btn-premium transition duration-300 transform hover:scale-[1.01]">
-                                ENVIAR MENSAJE Y RESERVAR
-                            </button>
-                        </form>
-
-                        <!-- Mensaje de confirmación (oculto por defecto) -->
-                        <div id="confirm-message" class="hidden mt-6 bg-green-900/50 p-4 rounded-lg border border-green-700 text-green-300">
-                            <p class="font-semibold flex items-center space-x-2">
-                                <i data-lucide="check-circle" class="w-5 h-5"></i>
-                                <span>¡Reserva enviada con éxito! Nos pondremos en contacto pronto.</span>
-                            </p>
-                        </div>
                     </div>
 
-                    <!-- Información de Contacto y Ubicación -->
-                    <div class="space-y-8 lg:mt-16">
-                        <h3 class="text-3xl font-bold text-white border-b-2 border-mk-gold pb-2">Información</h3>
-                        
-                        <div class="space-y-4">
-                            <!-- Teléfono -->
-                            <div class="flex items-start space-x-4">
-                                <i data-lucide="phone" class="w-6 h-6 text-mk-gold flex-shrink-0 mt-1"></i>
-                                <div>
-                                    <p class="font-semibold text-white">Teléfono</p>
-                                    <!-- Se mantiene el formato internacional por defecto, pero se pueden cambiar los números -->
-                                    <a href="tel:+51987654321" class="text-gray-400 hover:text-mk-gold transition duration-200">+51 987 654 321</a> 
-                                </div>
-                            </div>
-
-                            <!-- Correo -->
-                            <div class="flex items-start space-x-4">
-                                <i data-lucide="mail" class="w-6 h-6 text-mk-gold flex-shrink-0 mt-1"></i>
-                                <div>
-                                    <p class="font-semibold text-white">Correo Electrónico</p>
-                                    <a href="mailto:contacto@monkeyking.com" class="text-gray-400 hover:text-mk-gold transition duration-200">contacto@monkeyking.com</a>
-                                </div>
-                            </div>
-
-                            <!-- Dirección -->
-                            <div class="flex items-start space-x-4">
-                                <i data-lucide="map-pin" class="w-6 h-6 text-mk-gold flex-shrink-0 mt-1"></i>
-                                <div>
-                                    <p class="font-semibold text-white">Dirección</p>
-                                    <p class="text-gray-400">Av. de los Reyes #123, Distrito Central, Ciudad del Rey.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Horarios -->
-                        <h3 class="text-3xl font-bold text-white border-b-2 border-mk-gold pb-2 mt-8">Horarios</h3>
-                        <ul class="space-y-2 text-gray-400">
-                            <li class="flex justify-between"><span>Lunes - Viernes:</span> <span class="text-white">10:00 - 20:00</span></li>
-                            <li class="flex justify-between"><span>Sábados:</span> <span class="text-white">10:00 - 18:00</span></li>
-                            <li class="flex justify-between"><span>Domingos:</span> <span class="text-red-400">Cerrado</span></li>
-                        </ul>
+                    <!-- Valor 2: Trato Personalizado -->
+                    <div class="text-center p-6 border border-gray-800 rounded-xl shadow-xl hover:border-mk-gold/50 transition duration-300">
+                        <i data-lucide="users" class="w-12 h-12 text-mk-gold mx-auto mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Atención Confianza</h3>
+                        <p class="text-gray-400">
+                            Relación confiable, cercana y profesional. Promociones exclusivas para clientes frecuentes.
+                        </p>
                     </div>
+
+                    <!-- Valor 3: Equipos Portátiles -->
+                    <div class="text-center p-6 border border-gray-800 rounded-xl shadow-xl hover:border-mk-gold/50 transition duration-300">
+                        <i data-lucide="briefcase" class="w-12 h-12 text-mk-gold mx-auto mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-3 text-white">Calidad Asegurada</h3>
+                        <p class="text-gray-400">
+                            Usamos equipos y herramientas portátiles de barbería de alta gama para resultados profesionales.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Segmento de Clientes -->
+                <div class="mt-20 p-8 bg-gray-900 rounded-2xl border-l-4 border-mk-gold shadow-2xl max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-black text-white mb-4 flex items-center space-x-2">
+                        <i data-lucide="target" class="w-6 h-6 text-mk-gold"></i>
+                        <span>Ideal para:</span>
+                    </h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 text-gray-300 space-y-3">
+                        <li class="flex items-start space-x-2"><span class="text-mk-gold font-bold text-xl">•</span><p>Personas con poco tiempo o que prefieren atención en casa.</p></li>
+                        <li class="flex items-start space-x-2"><span class="text-mk-gold font-bold text-xl">•</span><p>Adultos mayores o personas con movilidad reducida.</p></li>
+                        <li class="flex items-start space-x-2"><span class="text-mk-gold font-bold text-xl">•</span><p>Jóvenes del Callao que buscan estilo moderno sin desplazarse.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios y Precios -->
+        <section id="servicios" class="py-20 md:py-32 bg-gray-900 border-t border-mk-gold/20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-black mb-12 text-white">Nuestra Lista de Precios</h2>
+                
+                <div class="space-y-6">
+                    <!-- Servicio 1: Corte de Cabello -->
+                    <div class="flex justify-between items-center p-4 bg-gray-950 rounded-xl shadow-lg border-b-2 border-mk-gold/50">
+                        <div class="text-left">
+                            <h3 class="text-2xl font-bold text-white">Corte de Cabello Profesional</h3>
+                            <p class="text-gray-400 text-sm">Incluye diseño de estilo, navaja y styling final.</p>
+                        </div>
+                        <span class="text-3xl font-black text-mk-gold">S/30</span>
+                    </div>
+
+                    <!-- Servicio 2: Arreglo de Barba -->
+                    <div class="flex justify-between items-center p-4 bg-gray-950 rounded-xl shadow-lg border-b-2 border-mk-gold/50">
+                        <div class="text-left">
+                            <h3 class="text-2xl font-bold text-white">Arreglo de Barba y Perfilado</h3>
+                            <p class="text-gray-400 text-sm">Tratamiento con aceites premium, perfilado con navaja.</p>
+                        </div>
+                        <span class="text-3xl font-black text-mk-gold">S/25</span>
+                    </div>
+
+                    <!-- Servicio 3: Paquete Completo (Destacado) -->
+                    <div class="flex justify-between items-center p-6 bg-gray-800 rounded-xl shadow-2xl shadow-mk-gold/30 border-2 border-mk-gold transform scale-[1.02]">
+                        <div class="text-left">
+                            <h3 class="text-2xl font-black text-mk-gold">Paquete "Real" (Corte + Barba)</h3>
+                            <p class="text-gray-300 text-sm">La experiencia completa, tu look transformado. Ahorra S/5.</p>
+                        </div>
+                        <span class="text-4xl font-black text-mk-gold">S/50</span>
+                    </div>
+
+                    <!-- Servicio 4: Corte a Navaja -->
+                    <div class="flex justify-between items-center p-4 bg-gray-950 rounded-xl shadow-lg border-b-2 border-mk-gold/50">
+                        <div class="text-left">
+                            <h3 class="text-2xl font-bold text-white">Corte Full Navaja</h3>
+                            <p class="text-gray-400 text-sm">Diseño de corte únicamente con navaja y desvanecido.</p>
+                        </div>
+                        <span class="text-3xl font-black text-mk-gold">S/40</span>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a href="#contacto" class="px-8 py-3 bg-mk-gold text-gray-950 font-bold text-lg rounded-xl shadow-2xl btn-gold transition duration-300">
+                        ¡QUIERO ESTE SERVICIO!
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Proyecto Social -->
+        <section id="social" class="py-20 md:py-32 bg-gray-950 bg-pattern border-t border-mk-gold/20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <i data-lucide="gem" class="w-16 h-16 text-mk-gold mb-4"></i>
+                        <p class="text-sm uppercase tracking-widest text-mk-gold mb-2 font-bold">Nuestra Misión</p>
+                        <h2 class="text-4xl font-black mb-6 text-white">"Corte del Futuro"</h2>
+                        
+                        <p class="text-lg text-gray-300 mb-6">
+                            Este proyecto social busca ofrecer una **alternativa real para la inclusión social** en el Callao, promoviendo que cada participante pueda obtener un empleo o iniciar su propio emprendimiento.
+                        </p>
+                        <p class="text-lg text-gray-300 mb-8">
+                            "CORTE DEL FUTURO" une **Creatividad + Capacitación + Emprendimiento** para construir futuros más prósperos y equitativos.
+                        </p>
+                        <a href="#contacto" class="px-6 py-2 border-2 border-mk-gold text-mk-gold font-bold rounded-lg hover:bg-mk-gold hover:text-gray-950 transition duration-300 inline-flex items-center space-x-2">
+                            MÁS INFORMACIÓN
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="order-1 lg:order-2">
+                        <!-- Placeholder para imagen representativa del proyecto -->
+                        <div class="w-full h-80 bg-gray-800 rounded-xl flex items-center justify-center border-4 border-mk-gold/50 shadow-2xl">
+                            <p class="text-2xl text-mk-gold font-bold">FOUNDATION SCHOOL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto y Formulario de Reserva -->
+        <section id="contacto" class="py-20 md:py-32 bg-gray-900 border-t border-gray-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-black text-center mb-4 text-white">Reserva tu Transformación</h2>
+                <p class="text-xl text-gray-400 text-center mb-12">
+                    Agenda tu cita a domicilio en cualquier zona del Callao.
+                </p>
+                
+                <form id="reservation-form" class="space-y-6 bg-gray-950 p-8 rounded-2xl shadow-2xl border border-gray-800">
+                    <div>
+                        <label for="reserva_nombre" class="block text-sm font-medium text-white mb-2">Nombre Completo</label>
+                        <input type="text" id="reserva_nombre" name="nombre" placeholder="Tu nombre..." class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-mk-gold focus:ring focus:ring-mk-gold/50 text-white" required>
+                    </div>
+                    <div>
+                        <label for="reserva_telefono" class="block text-sm font-medium text-white mb-2">WhatsApp / Teléfono</label>
+                        <input type="tel" id="reserva_telefono" name="telefono" placeholder="+51 9XX XXX XXX" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-mk-gold focus:ring focus:ring-mk-gold/50 text-white" required>
+                    </div>
+                    <div>
+                        <label for="reserva_servicio" class="block text-sm font-medium text-white mb-2">Servicio</label>
+                        <select id="reserva_servicio" name="servicio" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-mk-gold focus:ring focus:ring-mk-gold/50 text-white" required>
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="Corte_Cabello">Corte de Cabello (S/30)</option>
+                            <option value="Arreglo_Barba">Arreglo de Barba (S/25)</option>
+                            <option value="Paquete_Real">Paquete Real (S/50)</option>
+                            <option value="Consulta_Social">Consulta sobre Proyecto Social</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="reserva_direccion" class="block text-sm font-medium text-white mb-2">Dirección en Callao</label>
+                        <textarea id="reserva_direccion" name="direccion" rows="2" placeholder="Av., Urb., y referencias" class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-mk-gold focus:ring focus:ring-mk-gold/50 text-white" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-mk-gold text-gray-950 font-bold text-lg rounded-xl shadow-lg btn-gold transition duration-300 transform hover:scale-[1.01]">
+                        ENVIAR RESERVA
+                    </button>
+                </form>
+
+                <!-- Mensaje de confirmación (oculto por defecto) -->
+                <div id="confirm-message" class="hidden mt-6 bg-green-900/50 p-4 rounded-lg border border-green-700 text-green-300 text-center">
+                    <p class="font-semibold flex items-center justify-center space-x-2">
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        <span>¡Reserva enviada! Te contactaremos vía WhatsApp para confirmar fecha y hora.</span>
+                    </p>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Pie de Página (Footer) -->
-    <footer class="bg-gray-950 border-t border-gray-800 py-8">
+    <footer class="bg-gray-950 border-t-4 border-mk-gold/20 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex justify-center space-x-6 mb-4">
+            <a href="#" class="text-xl font-black tracking-widest text-mk-gold mb-4 block">MONKEY KING BARBER SHOP</a>
+            
+            <div class="flex justify-center space-x-6 mb-6">
                 <a href="#" class="text-gray-400 hover:text-mk-gold transition duration-200"><i data-lucide="instagram" class="w-6 h-6"></i></a>
                 <a href="#" class="text-gray-400 hover:text-mk-gold transition duration-200"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                <a href="#" class="text-gray-400 hover:text-mk-gold transition duration-200"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-400 hover:text-mk-gold transition duration-200"><i data-lucide="tiktok" class="w-6 h-6"></i></a>
             </div>
-            <p class="text-sm text-gray-500">
+            
+            <nav class="space-x-4 mb-4 text-sm text-gray-500">
+                <a href="#domicilio" class="hover:text-white">Servicio</a>
+                <span class="text-mk-gold">|</span>
+                <a href="#social" class="hover:text-white">Proyecto</a>
+                <span class="text-mk-gold">|</span>
+                <a href="#contacto" class="hover:text-white">Reserva</a>
+            </nav>
+
+            <p class="text-sm text-gray-600 mt-4">
                 &copy; <span id="current-year"></span> Monkey King Barber Shop. Todos los derechos reservados.
-            </p>
-            <p class="text-xs text-gray-700 mt-2">
-                Diseño por [Tu Nombre]. Imagen: {{image.png}}
             </p>
         </div>
     </footer>
@@ -338,10 +302,10 @@
     <!-- Script de JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Inicializa los iconos de Lucide
+            // Inicializa los íconos de Lucide
             lucide.createIcons();
 
-            // 1. Lógica del Menú Móvil
+            // Toggle del Menú Móvil
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
@@ -349,33 +313,46 @@
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Oculta el menú móvil al hacer clic en un enlace
+            // Cierra el menú al hacer clic en un enlace
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                 });
             });
 
-            // 2. Lógica del Formulario de Reserva (Simulación)
-            const form = document.querySelector('form');
+            // Lógica del Formulario de Reserva (Simulación)
+            const form = document.getElementById('reservation-form');
             const confirmMessage = document.getElementById('confirm-message');
 
             form.addEventListener('submit', (e) => {
-                e.preventDefault(); // Detiene el envío real del formulario
-
-                // Aquí simularías el envío de datos a tu backend (servidor/email)
-
-                // 1. Mostrar mensaje de confirmación
+                e.preventDefault();
+                
+                // Muestra el mensaje de confirmación
                 confirmMessage.classList.remove('hidden');
-                form.reset(); // Limpia el formulario
+                
+                // Opcional: Construir el mensaje de WhatsApp (ejemplo)
+                const nombre = document.getElementById('reserva_nombre').value;
+                const telefono = document.getElementById('reserva_telefono').value;
+                const servicio = document.getElementById('reserva_servicio').options[document.getElementById('reserva_servicio').selectedIndex].text;
+                const direccion = document.getElementById('reserva_direccion').value;
 
-                // 2. Ocultar el mensaje después de 5 segundos
+                console.log(`Reserva enviada: ${nombre}, Tel: ${telefono}, Servicio: ${servicio}, Dir: ${direccion}`);
+                
+                // Limpia el formulario
+                form.reset();
+
+                // Oculta el mensaje después de 5 segundos
                 setTimeout(() => {
                     confirmMessage.classList.add('hidden');
                 }, 5000);
+
+                // SIMULACIÓN DE LINK A WHATSAPP
+                // Para una implementación real, aquí generarías un link de WhatsApp con el mensaje prellenado
+                // const whatsappLink = `https://wa.me/51987654321?text=Hola,%20quisiera%20reservar%20el%20servicio:%20${encodeURIComponent(servicio)}%20para%20la%20dirección:%20${encodeURIComponent(direccion)}`;
+                // window.open(whatsappLink, '_blank');
             });
 
-            // 3. Establecer el año actual en el footer
+            // Año actual para el footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
         });
     </script>
