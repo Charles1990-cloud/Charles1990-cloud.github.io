@@ -18,7 +18,7 @@
             /* Simula un patrón de barbería sutil para el fondo, usa un gris oscuro */
             background-color: #0d0d0d; 
             background-image: radial-gradient(#222 1px, transparent 1px),
-                              radial-gradient(#222 1px, transparent 1px);
+                                    radial-gradient(#222 1px, transparent 1px);
             background-size: 40px 40px;
             background-position: 0 0, 20px 20px;
         }
@@ -36,7 +36,6 @@
 </head>
 <body class="bg-gray-950 text-gray-100 antialiased">
 
-    <!-- Encabezado y Navegación -->
     <header class="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-sm shadow-2xl shadow-black/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
             <a href="#" class="flex items-center space-x-2">
@@ -47,7 +46,7 @@
             
             <nav class="hidden md:flex space-x-8">
                 <a href="#domicilio" class="text-sm font-medium hover:text-mk-gold transition duration-200">Servicio a Domicilio</a>
-                <a href="#servicios" class="text-sm font-medium hover:text-mk-gold transition duration-200">Precios</a>
+                <a href="#catalogo" class="text-sm font-medium hover:text-mk-gold transition duration-200">Catálogo</a> <a href="#resenas" class="text-sm font-medium hover:text-mk-gold transition duration-200">Reseñas</a> <a href="#servicios" class="text-sm font-medium hover:text-mk-gold transition duration-200">Precios</a>
                 <a href="#social" class="text-sm font-medium hover:text-mk-gold transition duration-200">Proyecto Social</a>
             </nav>
 
@@ -60,17 +59,15 @@
             </button>
         </div>
 
-        <!-- Menú Móvil -->
         <nav id="mobile-menu" class="hidden md:hidden absolute w-full bg-gray-950/95 shadow-2xl pb-4">
             <a href="#domicilio" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Servicio a Domicilio</a>
-            <a href="#servicios" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Precios</a>
+            <a href="#catalogo" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Catálogo</a> <a href="#resenas" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Reseñas</a> <a href="#servicios" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Precios</a>
             <a href="#social" class="block px-4 py-2 text-base hover:bg-gray-800 transition duration-200">Proyecto Social</a>
             <a href="#contacto" class="block mx-4 mt-2 px-4 py-2 text-center bg-mk-gold text-gray-950 font-bold rounded-lg btn-gold transition duration-300">RESERVAR CITA</a>
         </nav>
     </header>
 
     <main>
-        <!-- Sección Principal (Hero - A Domicilio) -->
         <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center text-center border-b border-mk-gold/20">
             <div class="px-4 sm:px-6 lg:px-8 max-w-2xl py-24">
                 <p class="text-sm uppercase tracking-widest text-mk-gold mb-4 font-bold">MONKEY KING BARBER SHOP</p>
@@ -93,7 +90,6 @@
             </div>
         </section>
 
-        <!-- Sección de Propuesta de Valor / Por qué Elegirnos (Domicilio) -->
         <section id="domicilio" class="py-20 md:py-32 bg-gray-950 bg-pattern">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-black text-center mb-4 text-white">La Experiencia Monkey King</h2>
@@ -102,7 +98,6 @@
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <!-- Valor 1: Puntualidad y Limpieza -->
                     <div class="text-center p-6 border border-gray-800 rounded-xl shadow-xl hover:border-mk-gold/50 transition duration-300">
                         <i data-lucide="clock" class="w-12 h-12 text-mk-gold mx-auto mb-4"></i>
                         <h3 class="text-2xl font-bold mb-3 text-white">Puntualidad en la Cita</h3>
@@ -111,7 +106,6 @@
                         </p>
                     </div>
 
-                    <!-- Valor 2: Trato Personalizado -->
                     <div class="text-center p-6 border border-gray-800 rounded-xl shadow-xl hover:border-mk-gold/50 transition duration-300">
                         <i data-lucide="users" class="w-12 h-12 text-mk-gold mx-auto mb-4"></i>
                         <h3 class="text-2xl font-bold mb-3 text-white">Atención Confianza</h3>
@@ -120,7 +114,6 @@
                         </p>
                     </div>
 
-                    <!-- Valor 3: Equipos Portátiles -->
                     <div class="text-center p-6 border border-gray-800 rounded-xl shadow-xl hover:border-mk-gold/50 transition duration-300">
                         <i data-lucide="briefcase" class="w-12 h-12 text-mk-gold mx-auto mb-4"></i>
                         <h3 class="text-2xl font-bold mb-3 text-white">Calidad Asegurada</h3>
@@ -130,7 +123,6 @@
                     </div>
                 </div>
 
-                <!-- Segmento de Clientes -->
                 <div class="mt-20 p-8 bg-gray-900 rounded-2xl border-l-4 border-mk-gold shadow-2xl max-w-4xl mx-auto">
                     <h3 class="text-2xl font-black text-white mb-4 flex items-center space-x-2">
                         <i data-lucide="target" class="w-6 h-6 text-mk-gold"></i>
@@ -145,13 +137,108 @@
             </div>
         </section>
 
-        <!-- Sección de Servicios y Precios -->
+        <section id="resenas" class="py-20 md:py-32 bg-gray-900 border-t border-mk-gold/20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-black text-center mb-4 text-white">Nuestros Clientes lo Confirman</h2>
+                <p class="text-xl text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+                    "Las reseñas son ficticias, pero deben colocarlas para creerse el proyecto." - Prof.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-gray-950 rounded-xl shadow-2xl border-t-4 border-mk-gold/50">
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold mb-4 inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <p class="text-lg italic text-gray-300 mt-2 mb-4">
+                            "La puntualidad y el profesionalismo son de primera. Me hicieron sentir como un rey en mi propia casa. ¡El mejor corte del Callao!"
+                        </p>
+                        <div class="text-sm font-bold text-mk-gold">- Marco G., Bellavista</div>
+                    </div>
+
+                    <div class="p-6 bg-gray-950 rounded-xl shadow-2xl border-t-4 border-mk-gold/50">
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold mb-4 inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <p class="text-lg italic text-gray-300 mt-2 mb-4">
+                            "Excelente trato. Necesitaba un perfilado urgente y vinieron con todo el equipo. No vuelvo a la barbería tradicional. Súper recomendado."
+                        </p>
+                        <div class="text-sm font-bold text-mk-gold">- Juan C., La Punta</div>
+                    </div>
+
+                    <div class="p-6 bg-gray-950 rounded-xl shadow-2xl border-t-4 border-mk-gold/50">
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold mb-4 inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-mk-gold fill-mk-gold inline-block"></i>
+                        <p class="text-lg italic text-gray-300 mt-2 mb-4">
+                            "Mi abuelo no puede moverse y el servicio a domicilio fue perfecto. Paciencia y calidad. Es un servicio que la comunidad necesita."
+                        </p>
+                        <div class="text-sm font-bold text-mk-gold">- Elena F., Carmen de la Legua</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo" class="py-20 md:py-32 bg-gray-950 bg-pattern border-t border-mk-gold/20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-black text-center mb-4 text-white">Catálogo de Estilos & Acabados</h2>
+                <p class="text-xl text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+                    Inspírate con nuestra galería. Cada estilo es ejecutado con la máxima precisión y las herramientas de más alta calidad.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 rounded-xl shadow-2xl border border-gray-800 overflow-hidden hover:border-mk-gold transition duration-300">
+                        <div class="h-56 bg-gray-800 flex items-center justify-center">
+                             <i data-lucide="scissors" class="w-16 h-16 text-mk-gold"></i>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="text-2xl font-bold text-white mb-2">High Fade Clásico</h3>
+                            <p class="text-mk-gold font-black text-xl mb-3">S/30</p>
+                            <p class="text-gray-400 text-sm">Desvanecido alto o medio, terminado con navaja para un contorno limpio y definido. Un clásico atemporal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-900 rounded-xl shadow-2xl border border-gray-800 overflow-hidden hover:border-mk-gold transition duration-300">
+                        <div class="h-56 bg-gray-800 flex items-center justify-center">
+                             <i data-lucide="droplet" class="w-16 h-16 text-mk-gold"></i>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="text-2xl font-bold text-white mb-2">Perfilado y Tratamiento de Barba</h3>
+                            <p class="text-mk-gold font-black text-xl mb-3">S/25</p>
+                            <p class="text-gray-400 text-sm">Moldeado de barba con trimmer y acabado en caliente. Incluye aceites hidratantes premium.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-xl shadow-2xl border border-gray-800 overflow-hidden hover:border-mk-gold transition duration-300">
+                        <div class="h-56 bg-gray-800 flex items-center justify-center">
+                            <i data-lucide="bar-chart-3" class="w-16 h-16 text-mk-gold"></i>
+                        </div>
+                        <div class="p-6 text-left">
+                            <h3 class="text-2xl font-bold text-white mb-2">Taper Fade Moderno</h3>
+                            <p class="text-mk-gold font-black text-xl mb-3">S/35</p>
+                            <p class="text-gray-400 text-sm">Desvanecimiento sutil solo en patillas y nuca. Ideal para mantener longitud en los laterales.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="#contacto" class="px-8 py-3 border-2 border-mk-gold text-mk-gold font-bold text-lg rounded-xl transition duration-300 hover:bg-mk-gold hover:text-gray-950 inline-flex items-center justify-center">
+                        SOLICITAR MI ESTILO
+                    </a>
+                </div>
+            </div>
+        </section>
+        
         <section id="servicios" class="py-20 md:py-32 bg-gray-900 border-t border-mk-gold/20">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-black mb-12 text-white">Nuestra Lista de Precios</h2>
                 
                 <div class="space-y-6">
-                    <!-- Servicio 1: Corte de Cabello -->
                     <div class="flex justify-between items-center p-4 bg-gray-950 rounded-xl shadow-lg border-b-2 border-mk-gold/50">
                         <div class="text-left">
                             <h3 class="text-2xl font-bold text-white">Corte de Cabello Profesional</h3>
@@ -160,7 +247,6 @@
                         <span class="text-3xl font-black text-mk-gold">S/30</span>
                     </div>
 
-                    <!-- Servicio 2: Arreglo de Barba -->
                     <div class="flex justify-between items-center p-4 bg-gray-950 rounded-xl shadow-lg border-b-2 border-mk-gold/50">
                         <div class="text-left">
                             <h3 class="text-2xl font-bold text-white">Arreglo de Barba y Perfilado</h3>
@@ -169,7 +255,6 @@
                         <span class="text-3xl font-black text-mk-gold">S/25</span>
                     </div>
 
-                    <!-- Servicio 3: Paquete Completo (Destacado) -->
                     <div class="flex justify-between items-center p-6 bg-gray-800 rounded-xl shadow-2xl shadow-mk-gold/30 border-2 border-mk-gold transform scale-[1.02]">
                         <div class="text-left">
                             <h3 class="text-2xl font-black text-mk-gold">Paquete "Real" (Corte + Barba)</h3>
@@ -178,7 +263,6 @@
                         <span class="text-4xl font-black text-mk-gold">S/50</span>
                     </div>
 
-                    <!-- Servicio 4: Corte a Navaja -->
                     <div class="flex justify-between items-center p-4 bg-gray-950 rounded-xl shadow-lg border-b-2 border-mk-gold/50">
                         <div class="text-left">
                             <h3 class="text-2xl font-bold text-white">Corte Full Navaja</h3>
@@ -196,7 +280,6 @@
             </div>
         </section>
 
-        <!-- Sección de Proyecto Social -->
         <section id="social" class="py-20 md:py-32 bg-gray-950 bg-pattern border-t border-mk-gold/20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -218,7 +301,6 @@
                     </div>
                     
                     <div class="order-1 lg:order-2">
-                        <!-- Placeholder para imagen representativa del proyecto -->
                         <div class="w-full h-80 bg-gray-800 rounded-xl flex items-center justify-center border-4 border-mk-gold/50 shadow-2xl">
                             <p class="text-2xl text-mk-gold font-bold">FOUNDATION SCHOOL</p>
                         </div>
@@ -227,7 +309,6 @@
             </div>
         </section>
 
-        <!-- Sección de Contacto y Formulario de Reserva -->
         <section id="contacto" class="py-20 md:py-32 bg-gray-900 border-t border-gray-800">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-black text-center mb-4 text-white">Reserva tu Transformación</h2>
@@ -263,7 +344,6 @@
                     </button>
                 </form>
 
-                <!-- Mensaje de confirmación (oculto por defecto) -->
                 <div id="confirm-message" class="hidden mt-6 bg-green-900/50 p-4 rounded-lg border border-green-700 text-green-300 text-center">
                     <p class="font-semibold flex items-center justify-center space-x-2">
                         <i data-lucide="check-circle" class="w-5 h-5"></i>
@@ -274,7 +354,6 @@
         </section>
     </main>
 
-    <!-- Pie de Página (Footer) -->
     <footer class="bg-gray-950 border-t-4 border-mk-gold/20 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <a href="#" class="text-xl font-black tracking-widest text-mk-gold mb-4 block">MONKEY KING BARBER SHOP</a>
@@ -288,6 +367,8 @@
             <nav class="space-x-4 mb-4 text-sm text-gray-500">
                 <a href="#domicilio" class="hover:text-white">Servicio</a>
                 <span class="text-mk-gold">|</span>
+                <a href="#catalogo" class="hover:text-white">Catálogo</a> <span class="text-mk-gold">|</span>
+                <a href="#resenas" class="hover:text-white">Reseñas</a> <span class="text-mk-gold">|</span>
                 <a href="#social" class="hover:text-white">Proyecto</a>
                 <span class="text-mk-gold">|</span>
                 <a href="#contacto" class="hover:text-white">Reserva</a>
@@ -299,7 +380,6 @@
         </div>
     </footer>
 
-    <!-- Script de JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Inicializa los íconos de Lucide
